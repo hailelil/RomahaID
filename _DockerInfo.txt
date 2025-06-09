@@ -1,0 +1,29 @@
+5️⃣ Result:
+
+👉 Now when you are in:
+cd RomahaID
+
+👉 You can run:
+docker-compose up --build
+
+✅ This will:
+	•	Start Postgres
+	•	Build Marda Identity → run on port 8001
+	•	Build Senai Profile → run on port 8002
+	•	Build Honey Card Generator → run on port 6000
+	•	Build Honey Verify → run on port 8003
+	•	Start Roman Auth Server (Keycloak) → run on port 7000 → admin/admin
+
+⸻
+
+6️⃣ Final test:
+
+✅ After running:
+docker-compose up --build
+
+👉 You should see:
+	•	http://localhost:8001/docs → Marda Identity OpenAPI
+	•	http://localhost:8002/docs → Senai Profile OpenAPI
+	•	http://localhost:6000/health → Honey Card Generator
+	•	http://localhost:8003/docs → Honey Verify OpenAPI
+	•	http://localhost:7000 → Keycloak login → admin/admin

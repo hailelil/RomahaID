@@ -1,0 +1,67 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: romaha_postgres
+    environment:
+      POSTGRES_USER: romaha_user
+      POSTGRES_PASSWORD: romaha_pass
+      POSTGRES_DB: romaha_id_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  marda-identity:
+    build: ./services/marda-identity
+    container_name: marda_identity
+    ports:
+      - "8001:8000"
+    depends_on:
+      - postgres
+
+  senai-profile:
+    build: ./services/senai-profile
+    container_name: senai_profile
+    ports:
+      - "8002:8000"
+    depends_on:
+      - postgres
+
+  honey-card-generator:
+    build: ./services/honey-card-generator
+    container_name: honey_card_generator
+    ports:
+      - "6000:6000"
+    depends_on:
+      - postgres
+
+  honey-verify:
+    build: ./services/honey-verify
+    container_name: honey_verify
+    ports:
+      - "8003:8000"
+    depends_on:
+      - postgres
+
+  roman-auth-server:
+    image: quay.io/keycloak/keycloak:24.0.3
+    container_name: roman_auth_server
+    environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgres
+      KC_DB_URL_PORT: 5432
+      KC_DB_URL_DATABASE: romaha_id_db
+      KC_DB_USERNAME: romaha_user
+      KC_DB_PASSWORD: romaha_pass
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev
+    ports:
+      - "7000:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
