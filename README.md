@@ -5,8 +5,11 @@ Romaha ID — Digital Identity & Access Management (IAM) Platform
 Romaha ID is a modern, secure, microservice-based Digital Identity & Access Management (IAM) platform designed to serve:
 
 ✅ Government Agencies
+
 ✅ Banks & Financial Sector
+
 ✅ Health Sector
+
 ✅ Enterprises & Organizations
 
 Built with modularity, security, and scalability in mind, Romaha ID aims to provide:
