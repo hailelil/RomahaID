@@ -15,9 +15,13 @@ Romaha ID is a modern, secure, microservice-based Digital Identity & Access Mana
 Built with modularity, security, and scalability in mind, Romaha ID aims to provide:
 
 ✅ Identity Registration → SPA + API
+
 ✅ Identity Verification → public APIs + QR-based
+
 ✅ Identity Card Generation → PDF / Smartcard
+
 ✅ OAuth2 / OIDC / SAML → modern access federation
+
 ✅ Strong Authentication → extensible to Mobile ID / Bank ID / MFA
 
 ⸻
@@ -25,8 +29,11 @@ Built with modularity, security, and scalability in mind, Romaha ID aims to prov
 Project Status
 
 🟢 Version → v1.0-planning
+
 🟢 Architecture Blueprint → completed
+
 🟢 Roadmap.md → defined
+
 🟢 Docs folder → initialized
 
 ⸻
@@ -34,11 +41,17 @@ Project Status
 Architecture Principles
 
 ✅ Microservice-based → each major capability is a standalone service
+
 ✅ Modular → components can evolve independently
+
 ✅ Open standards → OAuth2, OpenID Connect, SAML
+
 ✅ Modern UX → responsive SPA → mobile first
+
 ✅ CI/CD → automated pipelines from Day 1
+
 ✅ Documentation → versioned with code
+
 ✅ Infrastructure as Code → Docker, Kubernetes
 
 ⸻
